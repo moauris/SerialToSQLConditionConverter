@@ -41,13 +41,13 @@ namespace SQLWhereConditionGenerator
             string CheckedText = tbxPaste.Text;
 
             MatchCollection mc = r.Matches(CheckedText);
-            Debug.Print($"There are {mc.Count} Matches found");
+            //Debug.Print($"There are {mc.Count} Matches found");
 
             //Making a string builder to caputre the result
             StringBuilder sb = new StringBuilder();
             foreach (Match m in mc)
             {
-                Debug.Print($"Caputured value: {m.Value}");
+                //Debug.Print($"Caputured value: {m.Value}");
                 sb.Append('"');
                 sb.Append(m.Value);
                 sb.Append('"');

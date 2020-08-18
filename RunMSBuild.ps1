@@ -8,5 +8,14 @@
     Write-Host "Start Compilation."
 
     $ProjectDir = (Get-ChildItem -Recurse -Filter *.csproj).FullName
-    $script = 
-    Invoke-Expression "$MSDirectory $ProjectDir"
+    $command = "$MSDirectory $ProjectDir"
+    $promptmessage = "Will execute Compile command `r`n $command `r`n Press [Y] to continue, [N] to exit"
+
+    $key = Read-Host -Prompt $promptmessage
+    if($key -ne 'y')
+    {
+        Write-Host "Exiting..."
+        Exit 0
+    }
+    
+    Invoke-Expression $command
