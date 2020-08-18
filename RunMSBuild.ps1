@@ -3,7 +3,7 @@
     if(!$fileinfo.Exists)
     {
         Write-Error -Message "The executable msbuild.exe not found in $MSDirectory"
-        Exit 3
+        Return 3
     }
     Write-Host "Start Compilation."
 
@@ -15,7 +15,7 @@
     if($key -ne 'y')
     {
         Write-Host "Exiting..."
-        Exit 0
+        Return 0
     }
     
     Invoke-Expression $command
